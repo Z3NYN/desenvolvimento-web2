@@ -1,21 +1,22 @@
-# Desenvolvimento Web II — N1
+# Desenvolvimento Web II
 
-Projeto desenvolvido para a atividade avaliativa N1 da disciplina de **Programação Web II**, utilizando Java com Spring Boot no backend e React com TypeScript no frontend.
+Projeto full stack desenvolvido durante a disciplina de **Programação Web II**, utilizando Spring Boot no backend e React com TypeScript no frontend.
 
-O sistema permite realizar operações de cadastro, consulta, edição e exclusão de usuários, permissões e produtos, seguindo a arquitetura em camadas trabalhada durante as aulas.
+O sistema permite gerenciar usuários, permissões e produtos por meio de operações de cadastro, consulta, edição e exclusão, utilizando uma API REST e uma arquitetura em camadas.
 
 ## Tecnologias utilizadas
 
-**Backend**
+### Backend
 - Java 21
 - Spring Boot 4.1.0
 - Maven
-- Spring Data JPA
 - Spring Web
+- Spring Data JPA
 - Spring Security
 - H2 Database
+- PostgreSQL Driver
 
-**Frontend**
+### Frontend
 - React
 - TypeScript
 - Vite
@@ -23,47 +24,45 @@ O sistema permite realizar operações de cadastro, consulta, edição e exclus�
 
 ## Funcionalidades
 
-O sistema possui três módulos principais:
+O sistema possui operações de CRUD para três entidades:
 
 **Usuários**
-- Cadastrar usuários
-- Listar usuários cadastrados
-- Editar informações
-- Excluir usuários
+- Cadastro de usuários
+- Listagem de usuários
+- Edição de informações
+- Exclusão de usuários
 
 **Permissões**
-- Cadastrar permissões
-- Listar permissões
-- Editar permissões
-- Excluir permissões
+- Cadastro de permissões
+- Listagem de permissões
+- Edição de permissões
+- Exclusão de permissões
 
 **Produtos**
-- Cadastrar produtos
-- Listar produtos
-- Editar produtos
-- Excluir produtos
-- Validar o preço, impedindo valores negativos
+- Cadastro de produtos
+- Listagem de produtos
+- Edição de produtos
+- Exclusão de produtos
+- Validação para impedir preços negativos
 
 ## Estrutura do projeto
 
-O backend está organizado em quatro camadas:
+O backend está organizado em camadas:
 
-- `model`: entidades do sistema.
-- `repository`: acesso ao banco de dados.
-- `service`: regras de negócio.
-- `controller`: endpoints da API REST.
+- `model` — Entidades do sistema.
+- `repository` — Acesso e persistência dos dados.
+- `service` — Regras de negócio.
+- `controller` — Endpoints da API REST.
 
-O frontend está localizado em `src/main/frontend` e contém os componentes, formulários e páginas responsáveis pela interação com o usuário.
+O frontend está localizado em `src/main/frontend`, com páginas e componentes responsáveis pela interface e comunicação com a API.
 
 ## Como executar
 
 ### Pré-requisitos
 
-Para executar o projeto, é necessário ter instalado:
-
 - JDK 21
 - Maven 3.9 ou superior
-- Node.js 22.12 ou superior (ou versão 24)
+- Node.js 22.12 ou superior, ou versão 24
 - npm
 
 ### 1. Clonar o repositório
@@ -73,40 +72,36 @@ git clone https://github.com/Z3NYN/desenvolvimento-web2.git
 cd desenvolvimento-web2
 ```
 
-### 2. Executar o backend
+### 2. Iniciar o backend
 
-Na raiz do projeto:
+Na raiz do projeto, execute:
 
 ```bash
 mvn clean verify
 mvn spring-boot:run
 ```
 
-O backend será iniciado em:
+O backend estará disponível em `http://localhost:8080`.
 
-`http://localhost:8080`
-
-### 3. Executar o frontend
+### 3. Iniciar o frontend
 
 Em outro terminal, a partir da raiz do projeto:
 
 ```bash
 cd src/main/frontend
 npm ci
-npm run dev
+npm run dev -- --port 5173 --strictPort
 ```
 
-Acesse no navegador:
-
-`http://localhost:5173`
+A aplicação estará disponível em `http://localhost:5173`.
 
 ## Banco de dados
 
-O projeto utiliza o banco de dados H2, configurado para armazenar os dados localmente em arquivo.
+O projeto utiliza H2 com persistência em arquivo local, permitindo manter os registros após reiniciar a aplicação.
 
-Por isso, não é necessário instalar ou configurar um servidor de banco de dados externo para executar a aplicação.
+Não é necessário instalar um servidor de banco de dados externo para executar o sistema.
 
-## Endpoints da API
+## API REST
 
 | Recurso | Endpoint |
 |---|---|
@@ -114,25 +109,25 @@ Por isso, não é necessário instalar ou configurar um servidor de banco de dad
 | Permissões | `/api/permissoes` |
 | Produtos | `/api/produtos` |
 
-Os recursos utilizam os seguintes métodos HTTP:
+Métodos HTTP disponíveis:
 
-| Método | Operação |
+| Método | Descrição |
 |---|---|
-| GET | Consultar ou listar registros |
-| POST | Cadastrar um registro |
-| PUT | Atualizar um registro |
-| DELETE | Excluir um registro |
+| GET | Listar ou consultar registros |
+| POST | Cadastrar registros |
+| PUT | Atualizar registros |
+| DELETE | Excluir registros |
+
+Para consultar um registro específico, atualizar ou excluir, utiliza-se o identificador na URL, como em `/api/produtos/{id}`.
 
 ## Observações
 
-- A aplicação utiliza uma API REST para comunicação entre frontend e backend.
-- As operações realizadas no frontend atualizam as listagens de registros.
-- As validações de regras de negócio são realizadas na camada de serviço.
-- A senha dos usuários não é exibida nas respostas da API.
-- O projeto foi desenvolvido para fins acadêmicos, sem implementação de autenticação de usuários.
+- A comunicação entre frontend e backend é realizada com Axios.
+- As listagens são atualizadas após as operações de cadastro, edição e exclusão.
+- As regras de negócio são implementadas na camada de serviço.
+- A senha dos usuários não é retornada nas respostas da API.
+- A autenticação de usuários ainda não foi implementada.
 
-## Atividade
+## Desenvolvimento
 
-**Disciplina:** Programação Web II  
-**Avaliação:** N1  
-**Repositório:** https://github.com/Z3NYN/desenvolvimento-web2
+Projeto acadêmico desenvolvido como parte das atividades práticas da disciplina de Programação Web II.
