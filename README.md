@@ -96,7 +96,7 @@ A imagem do Spring Initializr seleciona **Java 25**: para esta avaliação, corr
 
 ## Repositório da atividade
 
-Destino escolhido para a atividade: [Z3NYN/desenvolvimento-web2](https://github.com/Z3NYN/desenvolvimento-web2).
+Projeto publicado em [Z3NYN/desenvolvimento-web2](https://github.com/Z3NYN/desenvolvimento-web2), na branch `main`.
 
 Para obter o projeto pelo Git:
 
@@ -107,18 +107,15 @@ cd desenvolvimento-web2
 
 Depois, siga os comandos da seção **Executar**, mantendo o backend e o frontend em terminais separados.
 
-Para publicar a cópia do ZIP nesse repositório vazio, abra um terminal na raiz `projeto-n1` e execute:
+Para enviar alterações futuras, faça as mudanças na cópia clonada e execute na raiz `desenvolvimento-web2`:
 
 ```sh
-git init
 git add .
-git commit -m "Implementa atividade N1 de Programacao Web II"
-git branch -M main
-git remote add origin https://github.com/Z3NYN/desenvolvimento-web2.git
-git push -u origin main
+git commit -m "Descreve a alteracao realizada"
+git push
 ```
 
-Autentique-se quando solicitado. O `.gitignore` exclui o banco local, os pacotes instalados e os arquivos gerados pelos builds. Confira no GitHub se as fontes, `pom.xml`, `package-lock.json` e estas instruções apareceram e envie o link do repositório na atividade N1 no Google Sala de Aula.
+Autentique-se quando solicitado. O `.gitignore` exclui o banco local, os pacotes instalados e os arquivos gerados pelos builds. Envie o link do repositório na atividade N1 no Google Sala de Aula.
 
 Em alterações futuras, faça commits reais e frequentes. O histórico de trabalho anterior não foi inventado; esta entrega não comprova commits regulares ao longo do semestre.
 

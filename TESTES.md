@@ -56,6 +56,6 @@ Para repetir manualmente, siga os comandos de execução do README e realize os 
 - O lock inicial trouxe um aviso de audit em `source-map-js` 1.2.1. Somente esse pacote transitivo foi corrigido para 1.2.2; nenhuma versão declarada no `package.json` mudou. Build, lint, audit e instalação limpa foram conferidos após o ajuste.
 - Não foi testado PostgreSQL: o banco desta etapa é H2. O driver exigido está incluído.
 - Não há teste de login, JWT ou roteamento, pois essas funcionalidades não integram o escopo pedido.
-- O destino escolhido para a atividade é [Z3NYN/desenvolvimento-web2](https://github.com/Z3NYN/desenvolvimento-web2). Os resultados acima foram obtidos localmente; não houve verificação no GitHub Actions. Nenhum histórico de commits anterior foi fabricado.
+- O projeto foi publicado em [Z3NYN/desenvolvimento-web2](https://github.com/Z3NYN/desenvolvimento-web2), na branch `main`. As fontes da aplicação publicadas correspondem às fontes testadas desta entrega. Os resultados acima foram obtidos localmente; não houve verificação no GitHub Actions. Nenhum histórico de commits anterior foi fabricado.
 
 As saídas resumidas efetivas do Maven e da integração pelo navegador estão na pasta `verificacao/`. Os binários, o banco de teste, as ferramentas portáteis e os pacotes instalados não fazem parte do ZIP.
